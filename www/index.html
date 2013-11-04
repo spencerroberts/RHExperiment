@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+        <title>RockHarbor Experiment</title>
+    </head>
+    <body>
+		<div class="container">
+			<div class="page-header">
+				<div class="btn-group pull-right">
+					<button class="btn">Costa Mesa</button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">Mission Viejo</a></li>
+						<li><a href="#">Fullerton</a></li>
+						<li><a href="#">Huntington Beach</a></li>
+						<li><a href="#">Orange</a></li>
+						<li><a href="#">Costa Mesa</a></li>
+					</ul>
+				</div>
+				<div class="logo">
+					<img src="img/logo.png">
+					<img src="http://costamesa.rockharbor.org/wp-content/themes/rockharbor/img/textlogo-white.png" alt="ROCKHARBOR">
+				</div>
+			</div>
+			
+			<div class="jumbotron">
+			
+			</div>
+		
+			<ul class="nav nav-tabs" id="headerTabs">
+				<li class="active"><a href="#messages">Messages</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#events">Events</a></li>
+			</ul>
+			
+			<div class="tab-content">
+				<div class="tab-pane active" id="messages">
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object" data-src="holder.js/64x64">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading">Media heading</h4>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="services"></div>
+				<div class="tab-pane" id="events"></div>          
+			</div>
+		</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+			
+			$('#headerTabs a').click(function (e) {
+				e.preventDefault();
+				$(this).tab('show');
+			});
+        </script>
+    </body>
+</html>
