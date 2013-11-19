@@ -7,14 +7,17 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+		<style>
+
+		</style>
         <title>RockHarbor Experiment</title>
     </head>
     <body>
 		<div class="container">
 			<div class="page-header">
 				<div class="btn-group pull-right">
-					<button class="btn">Costa Mesa</button>
-					<button class="btn dropdown-toggle" data-toggle="dropdown">
+					<button class="btn btn-large">Costa Mesa</button>
+					<button class="btn btn-large dropdown-toggle" data-toggle="dropdown">
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu">
@@ -27,35 +30,469 @@
 				</div>
 				<div class="logo">
 					<img src="img/logo.png">
-					<img src="http://costamesa.rockharbor.org/wp-content/themes/rockharbor/img/textlogo-white.png" alt="ROCKHARBOR">
+				</div>
+				<div class="alert alert-block alert-success" id="audio_alert">
+					<button class="btn btn-danger pull-right" id="audio_stop" data-dismiss="alert">Stop</button>
+					<h3 class="alert-heading">Playing...</h3>
+					<p><strong>ANNOUNCING RECONCILIATION</strong></p>
+					<p>Teacher: Jim Masteller</p>
+					<p id="audio_position" class="muted"></p>
 				</div>
 			</div>
 			
-			<div class="jumbotron">
-			
-			</div>
-		
 			<ul class="nav nav-tabs" id="headerTabs">
 				<li class="active"><a href="#messages">Messages</a></li>
 				<li><a href="#services">Services</a></li>
+				<li><a href="#blog">Blog</a></li>
 				<li><a href="#events">Events</a></li>
 			</ul>
 			
 			<div class="tab-content">
 				<div class="tab-pane active" id="messages">
-					<div class="media">
-						<a class="pull-left" href="#">
-							<img class="media-object" data-src="holder.js/64x64">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">Media heading</h4>
+					<ul class="media-list">
+						<li class="media">
+							<div id="announceArticle" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="announceArticleLabel" aria-hidden="true">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+								<h3 id="announceArticleLabel">ANNOUNCING RECONCILIATION</h3>
+							  </div>
+							  <div class="modal-body">
+								<p>Tags:deeper, Mission, Reconciliation, Vision</p>
+								<p>Series:Deeper</p>
+								<p>Teacher:Jim Masteller</p>
+								<p>Scripture:2 Corinthians 5:11-21</p>
+								<p>Length:41:47<p>
+								<strong>Continuing on in our vision series, we go deeper into what mission looks like as followers of Christ. We are called to be ministers of reconciliation to the world that so desperately needs models of what that looks like.</strong>
+							  </div>
+							  <div class="modal-footer">
+							  	<button class="btn btn-primary">Share</button> 
+								<button class="btn btn-primary" data-dismiss="modal" id="playAnnounceArticle">Listen</button> 
+								
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							  </div>
+							</div>
+							<a class="pull-left" data-toggle="modal" href="#announceArticle">
+								<img class="media-object img-rounded" src="img/Deeper.jpg">
+							</a>
+							<div class="media-body">
+								<p class="muted pull-right">SEP 2</p>
+								<strong class="media-heading">ANNOUNCING RECONCILIATION</strong>
+								<p>Continuing on in our vision series, we go deeper into what mission looks like as followers of Christ.</p>
+								<p class="muted">TEACHER: Jim Masteller</p>
+							</div>
+						</li>
+						<li class="media">
+							<div id="livingArticle" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="livingArticleLabel" aria-hidden="true">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+								<h3 id="livingArticleLabel">LIVING ON MISSION</h3>
+							  </div>
+							  <div class="modal-body">
+								<p>Tags:deeper, Mission, Reconciliation, Vision</p>
+								<p>Series:Deeper</p>
+								<p>Teacher:Jim Masteller</p>
+								<p>Scripture:2 Corinthians 5:11-21</p>
+								<p>Length:41:47<p>
+								<strong>When I think of the word “mission,” I’m usually inclined to think of people leaving home to help underserved communities around the world. I’m often guilty of seeing mission as some grand thing that you do a few times in your life, if you’re lucky. But this vision series on mission has really caused me to think about what mission means to those of us who don’t regularly travel to the far reaches of the globe…and about what mission means for us in our daily lives.
+								The announcement of the Instagram campaign really helped me to understand that mission can happen anywhere, anytime. It’s not just in the favelas of Brazil or the struggling townships of South Africa; it’s also in the things we do and the people we interact with here in Orange County.Throughout the Bible, we’re reminded of the simple mission we’ve all been given.</strong>
+							  </div>
+							  <div class="modal-footer">
+							  	<button class="btn btn-primary">Share</button> 
+								<button class="btn btn-primary" data-dismiss="modal" id="playAnnounceArticle">Listen</button> 
+								
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							  </div>
+							</div>
+							<a class="pull-left" data-toggle="modal" href="#livingArticle">
+								<img class="media-object img-rounded" src="img/Mission.jpg">
+							</a>
+							<div class="media-body">
+								<p class="muted pull-right">AUG 22</p>
+								<strong class="media-heading">LIVING ON MISSION</strong>
+								<p>Throughout the Bible, we're reminded of the simple mission we've all been given:</p>
+								<p class="muted">TEACHER: Jim Masteller</p>
+							</div>
+						</li>
+						<li class="media">
+							<div id="missionArticle" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="missionArticleLabel" aria-hidden="true">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+								<h3 id="missionArticleLabel">LIFE GROUPS: IDENTITY</h3>
+							  </div>
+							  <div class="modal-body">
+								<p>Tags:deeper, Mission, Reconciliation, Vision</p>
+								<p>Series:Deeper</p>
+								<p>Teacher:Jim Masteller</p>
+								<p>Scripture:2 Corinthians 5:11-21</p>
+								<p>Length:41:47<p>
+								<strong>Have you ever tried telling a story to a close friend that ended with, “Well, you really just had to be there”? There’s almost no substitute for personal experience, which is why I always tell people whenever they ask about life groups that they just have to try it out for themselves. Because it’s really hard to explain why it’s such an important part of walking out the gospel and why it’s something you have to experience for yourself. However, if you were like me, you might be a little hesitant to just jump into the unknown with both feet. Fortunately, I think it may now be possible to experience what it’s like to be in a life group, and get a small peak into why it’s so important.
+If you weren’t aware, ROCKHARBOR has moved into a new series that is taking us Deeper in our walk with Christ. Part of the initiative is a new experiment called life group Labs. It’s a guided evening into the four different markers that make up the pillars of what it means to be in a life group. I was able to attend the first one on Identity and couldn’t have come away more excited about the next few to follow. Over the course of the evening we were taken through a few different examples of how Identity plays out in a life group.</strong>
+							  </div>
+							  <div class="modal-footer">
+							  	<button class="btn btn-primary">Share</button> 
+								<button class="btn btn-primary" data-dismiss="modal" id="playAnnounceArticle">Listen</button> 
+								
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							  </div>
+							</div>
+							<a class="pull-left" data-toggle="modal" href="#missionArticle">
+								<img class="media-object img-rounded" src="img/Groups.jpg">
+							</a>
+							<div class="media-body">
+								<p class="muted pull-right">OCT 31</p>
+								<strong class="media-heading">LIFE GROUPS: IDENTITY</strong>
+								<p>'How differently would we live our lives if we truly believed that our identity was found in Jesus'</p>
+								<p class="muted">TEACHER: Jim Masteller</p>
+							</div>
+						</li>
+						<li class="media">
+							<div id="announceArticle" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="announceArticleLabel" aria-hidden="true">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+								<h3 id="announceArticleLabel">ANNOUNCING RECONCILIATION</h3>
+							  </div>
+							  <div class="modal-body">
+								<p>Tags:deeper, Mission, Reconciliation, Vision</p>
+								<p>Series:Deeper</p>
+								<p>Teacher:Jim Masteller</p>
+								<p>Scripture:2 Corinthians 5:11-21</p>
+								<p>Length:41:47<p>
+								<strong>Continuing on in our vision series, we go deeper into what mission looks like as followers of Christ. We are called to be ministers of reconciliation to the world that so desperately needs models of what that looks like.</strong>
+							  </div>
+							  <div class="modal-footer">
+							  	<button class="btn btn-primary">Share</button> 
+								<button class="btn btn-primary" data-dismiss="modal" id="playAnnounceArticle">Listen</button> 
+								
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							  </div>
+							</div>
+							<a class="pull-left" data-toggle="modal" href="#announceArticle">
+								<img class="media-object img-rounded" src="img/Deeper.jpg">
+							</a>
+							<div class="media-body">
+								<p class="muted pull-right">SEP 2</p>
+								<strong class="media-heading">ANNOUNCING RECONCILIATION</strong>
+								<p>Continuing on in our vision series, we go deeper into what mission looks like as followers of Christ.</p>
+								<p class="muted">TEACHER: Jim Masteller</p>
+							</div>
+						</li>
+						<li class="media">
+							<div id="livingArticle" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="livingArticleLabel" aria-hidden="true">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+								<h3 id="livingArticleLabel">LIVING ON MISSION</h3>
+							  </div>
+							  <div class="modal-body">
+								<p>Tags:deeper, Mission, Reconciliation, Vision</p>
+								<p>Series:Deeper</p>
+								<p>Teacher:Jim Masteller</p>
+								<p>Scripture:2 Corinthians 5:11-21</p>
+								<p>Length:41:47<p>
+								<strong>When I think of the word “mission,” I’m usually inclined to think of people leaving home to help underserved communities around the world. I’m often guilty of seeing mission as some grand thing that you do a few times in your life, if you’re lucky. But this vision series on mission has really caused me to think about what mission means to those of us who don’t regularly travel to the far reaches of the globe…and about what mission means for us in our daily lives.
+								The announcement of the Instagram campaign really helped me to understand that mission can happen anywhere, anytime. It’s not just in the favelas of Brazil or the struggling townships of South Africa; it’s also in the things we do and the people we interact with here in Orange County.Throughout the Bible, we’re reminded of the simple mission we’ve all been given.</strong>
+							  </div>
+							  <div class="modal-footer">
+							  	<button class="btn btn-primary">Share</button> 
+								<button class="btn btn-primary">Watch</button> 
+								<button class="btn btn-primary" data-dismiss="modal" id="playAnnounceArticle">Listen</button> 
+								
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							  </div>
+							</div>
+							<a class="pull-left" data-toggle="modal" href="#livingArticle">
+								<img class="media-object img-rounded" src="img/Mission.jpg">
+							</a>
+							<div class="media-body">
+								<p class="muted pull-right">AUG 22</p>
+								<strong class="media-heading">LIVING ON MISSION</strong>
+								<p>Throughout the Bible, we're reminded of the simple mission we've all been given:</p>
+								<p class="muted">TEACHER: Jim Masteller</p>
+							</div>
+						</li>
+						<li class="media">
+							<div id="missionArticle" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="missionArticleLabel" aria-hidden="true">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+								<h3 id="missionArticleLabel">LIFE GROUPS: IDENTITY</h3>
+							  </div>
+							  <div class="modal-body">
+								<p>Tags:deeper, Mission, Reconciliation, Vision</p>
+								<p>Series:Deeper</p>
+								<p>Teacher:Jim Masteller</p>
+								<p>Scripture:2 Corinthians 5:11-21</p>
+								<p>Length:41:47<p>
+								<strong>Have you ever tried telling a story to a close friend that ended with, “Well, you really just had to be there”? There’s almost no substitute for personal experience, which is why I always tell people whenever they ask about life groups that they just have to try it out for themselves. Because it’s really hard to explain why it’s such an important part of walking out the gospel and why it’s something you have to experience for yourself. However, if you were like me, you might be a little hesitant to just jump into the unknown with both feet. Fortunately, I think it may now be possible to experience what it’s like to be in a life group, and get a small peak into why it’s so important.
+If you weren’t aware, ROCKHARBOR has moved into a new series that is taking us Deeper in our walk with Christ. Part of the initiative is a new experiment called life group Labs. It’s a guided evening into the four different markers that make up the pillars of what it means to be in a life group. I was able to attend the first one on Identity and couldn’t have come away more excited about the next few to follow. Over the course of the evening we were taken through a few different examples of how Identity plays out in a life group.</strong>
+							  </div>
+							  <div class="modal-footer">
+							  	<button class="btn btn-primary">Share</button> 
+								<button class="btn btn-primary" data-dismiss="modal" id="playAnnounceArticle">Listen</button> 
+								
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							  </div>
+							</div>
+							<a class="pull-left" data-toggle="modal" href="#missionArticle">
+								<img class="media-object img-rounded" src="img/Groups.jpg">
+							</a>
+							<div class="media-body">
+								<p class="muted pull-right">OCT 31</p>
+								<strong class="media-heading">LIFE GROUPS: IDENTITY</strong>
+								<p>'How differently would we live our lives if we truly believed that our identity was found in Jesus'</p>
+								<p class="muted">TEACHER: Jim Masteller</p>
+							</div>
+						</li>
+						<li class="media">
+							<div id="announceArticle" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="announceArticleLabel" aria-hidden="true">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+								<h3 id="announceArticleLabel">ANNOUNCING RECONCILIATION</h3>
+							  </div>
+							  <div class="modal-body">
+								<p>Tags:deeper, Mission, Reconciliation, Vision</p>
+								<p>Series:Deeper</p>
+								<p>Teacher:Jim Masteller</p>
+								<p>Scripture:2 Corinthians 5:11-21</p>
+								<p>Length:41:47<p>
+								<strong>Continuing on in our vision series, we go deeper into what mission looks like as followers of Christ. We are called to be ministers of reconciliation to the world that so desperately needs models of what that looks like.</strong>
+							  </div>
+							  <div class="modal-footer">
+							  	<button class="btn btn-primary">Share</button> 
+								<button class="btn btn-primary" data-dismiss="modal" id="playAnnounceArticle">Listen</button> 
+								
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							  </div>
+							</div>
+							<a class="pull-left" data-toggle="modal" href="#announceArticle">
+								<img class="media-object img-rounded" src="img/Deeper.jpg">
+							</a>
+							<div class="media-body">
+								<p class="muted pull-right">SEP 2</p>
+								<strong class="media-heading">ANNOUNCING RECONCILIATION</strong>
+								<p>Continuing on in our vision series, we go deeper into what mission looks like as followers of Christ.</p>
+								<p class="muted">TEACHER: Jim Masteller</p>
+							</div>
+						</li>
+						<li class="media">
+							<div id="livingArticle" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="livingArticleLabel" aria-hidden="true">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+								<h3 id="livingArticleLabel">LIVING ON MISSION</h3>
+							  </div>
+							  <div class="modal-body">
+								<p>Tags:deeper, Mission, Reconciliation, Vision</p>
+								<p>Series:Deeper</p>
+								<p>Teacher:Jim Masteller</p>
+								<p>Scripture:2 Corinthians 5:11-21</p>
+								<p>Length:41:47<p>
+								<strong>When I think of the word “mission,” I’m usually inclined to think of people leaving home to help underserved communities around the world. I’m often guilty of seeing mission as some grand thing that you do a few times in your life, if you’re lucky. But this vision series on mission has really caused me to think about what mission means to those of us who don’t regularly travel to the far reaches of the globe…and about what mission means for us in our daily lives.
+								The announcement of the Instagram campaign really helped me to understand that mission can happen anywhere, anytime. It’s not just in the favelas of Brazil or the struggling townships of South Africa; it’s also in the things we do and the people we interact with here in Orange County.Throughout the Bible, we’re reminded of the simple mission we’ve all been given.</strong>
+							  </div>
+							  <div class="modal-footer">
+							  	<button class="btn btn-primary">Share</button> 
+								<button class="btn btn-primary" data-dismiss="modal" id="playAnnounceArticle">Listen</button> 
+								
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							  </div>
+							</div>
+							<a class="pull-left" data-toggle="modal" href="#livingArticle">
+								<img class="media-object img-rounded" src="img/Mission.jpg">
+							</a>
+							<div class="media-body">
+								<p class="muted pull-right">AUG 22</p>
+								<strong class="media-heading">LIVING ON MISSION</strong>
+								<p>Throughout the Bible, we're reminded of the simple mission we've all been given:</p>
+								<p class="muted">TEACHER: Jim Masteller</p>
+							</div>
+						</li>
+						<li class="media">
+							<div id="missionArticle" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="missionArticleLabel" aria-hidden="true">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+								<h3 id="missionArticleLabel">LIFE GROUPS: IDENTITY</h3>
+							  </div>
+							  <div class="modal-body">
+								<p>Tags:deeper, Mission, Reconciliation, Vision</p>
+								<p>Series:Deeper</p>
+								<p>Teacher:Jim Masteller</p>
+								<p>Scripture:2 Corinthians 5:11-21</p>
+								<p>Length:41:47<p>
+								<strong>Have you ever tried telling a story to a close friend that ended with, “Well, you really just had to be there”? There’s almost no substitute for personal experience, which is why I always tell people whenever they ask about life groups that they just have to try it out for themselves. Because it’s really hard to explain why it’s such an important part of walking out the gospel and why it’s something you have to experience for yourself. However, if you were like me, you might be a little hesitant to just jump into the unknown with both feet. Fortunately, I think it may now be possible to experience what it’s like to be in a life group, and get a small peak into why it’s so important.
+If you weren’t aware, ROCKHARBOR has moved into a new series that is taking us Deeper in our walk with Christ. Part of the initiative is a new experiment called life group Labs. It’s a guided evening into the four different markers that make up the pillars of what it means to be in a life group. I was able to attend the first one on Identity and couldn’t have come away more excited about the next few to follow. Over the course of the evening we were taken through a few different examples of how Identity plays out in a life group.</strong>
+							  </div>
+							  <div class="modal-footer">
+							  	<button class="btn btn-primary">Share</button> 
+								<button class="btn btn-primary" data-dismiss="modal" id="playAnnounceArticle">Listen</button> 
+								
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							  </div>
+							</div>
+							<a class="pull-left" data-toggle="modal" href="#missionArticle">
+								<img class="media-object img-rounded" src="img/Groups.jpg">
+							</a>
+							<div class="media-body">
+								<p class="muted pull-right">OCT 31</p>
+								<strong class="media-heading">LIFE GROUPS: IDENTITY</strong>
+								<p>'How differently would we live our lives if we truly believed that our identity was found in Jesus'</p>
+								<p class="muted">TEACHER: Jim Masteller</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="tab-pane" id="services">
+					<div class="pull-left">
+						<address>
+						  <strong>Costa Mesa</strong><br>
+						  345 Fischer Ave.<br>
+						  Costa Mesa, CA 92626
+						</address>
+					</div>
+					<button class="btn btn-primary btn-large pull-right">Directions</button>
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Time</th>
+								<th>Features</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Saturdays, 6 PM</td>
+								<td>Children's Ministry</td>
+								<td><button class="btn btn-primary">Invite</button></td>
+							</tr>
+							<tr>
+								<td>Sundays, 9 AM</td>
+								<td>Children's Ministry</td>
+								<td><button class="btn btn-primary">Invite</button></td>
+							</tr>
+							<tr>
+								<td>Sundays, 11 AM</td>
+								<td>Children's Ministry | Middle School | High School | ASL</td>
+								<td><button class="btn btn-primary">Invite</button></td>
+							</tr>
+							<tr>
+								<td>Sundays, 7 PM</td>
+								<td></td>
+								<td><button class="btn btn-primary">Invite</button></td>
+							</tr>
+							<tr>
+								<td>Sundays, 9 PM</td>
+								<td></td>
+								<td><button class="btn btn-primary">Invite</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tab-pane" id="blog">
+					<div class="accordion" id="accordion2">
+					  <div class="accordion-group">
+						<div class="accordion-heading">
+							<p class="muted pull-right">OCT 28</p>
+						  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+							RIGHT THINKING, RIGHT LIVING
+						  </a>
 						</div>
+						<div id="collapseOne" class="accordion-body collapse">
+						  <div class="accordion-inner">
+							<p>This week Nick spoke on James 1:12-27.&nbsp; The general themes of James are trials, wisdom or learning to live well, the wealthy and the poor, and the need for inward holiness and outward compassion.&nbsp; Whereas Acts was written as a narrative or story, James is written as a letter instructing Christ followers in what to do and how to live.&nbsp; The focus on this part of scripture is on our spiritual growth and maturity.&nbsp; Nick says there is a danger in sitting and hearing the Word of God on Sundays, but then not bringing it into our “real” lives.&nbsp; We have a tone and rhythm at church that really looks like nothing else throughout the rest of the week.&nbsp; The problem is that spiritual maturity and growth happens in our real lives.&nbsp; Sundays are a time to get strengthened and encouraged by other believers so that we can go back out and be a light in a dark world.&nbsp; James knew that the key to spiritual growth was not just right thinking, but right living as well.</p>
+							<p>James teaches that when we are tempted, it is not God tempting us, but rather our own desires.&nbsp; It is not in God’s nature to tempt His people.&nbsp; The thoughts and desires we have can give birth to sin.&nbsp; Trials can become temptations when we allow our inner desires and thoughts to lead us away from what God commands.&nbsp; The difference between trials and temptations are our response to them.&nbsp; How do we handle the tough stuff?&nbsp; Do we allow anger and bitterness to grow?&nbsp; Do we allow it to divide us with God or does the trial deepen our trust in the Lord?&nbsp; Do we allow the trial to strip away sin in our life and do we press in to the work God is doing in us?&nbsp; It’s not to say that we can’t be angry or emotionally honest with God.&nbsp; He can handle our emotions and sometimes we need to feel and express our anger at the sin in the world.&nbsp; But at some point we have a choice to let go of the anger and to trust in God’s purposes, or we can choose to allow it take root and lead to sin.&nbsp; 2 Corinthians 10:5 says we are to take every thought captive to the obedience of Christ.&nbsp; We have a responsibility to control our thought life, which leads to what we believe and how we act.&nbsp; Our outward actions start in our mind.&nbsp; When we take every thought captive and bring it before the Lord to examine, we are stopping sin from taking root in our hearts.&nbsp; Sin develops in us before any action happens, for it starts in our desires and thoughts.&nbsp; Nick used the example of the great Redwood trees.&nbsp; They have lived for thousands of years and have endured many fires.&nbsp; The fires have actually helped them to prosper because it clears the brush away and opens the seeds of the pinecones.&nbsp; The trees develop a thick bark to help them withstand the heat.&nbsp; If we can embrace the fact that trials, although hard and painful, are actually for our spiritual growth and deepening character, I think it will help us to take every thought captive and trust in the goodness of God, who knows what we need far greater than we do.</p>
+							<p>The second theme that James addressed in this section is wise living.&nbsp; He says we are to put off anger, for it does not produce the righteous life that God requires.&nbsp; In our culture, anger is common.&nbsp; We are not to live that way.&nbsp; God did create us to live in conflict, but rather in peace with one another.&nbsp; When we put off sin, we are creating space in our lives for God’s Word to grow.&nbsp; James was passionate about Christ followers becoming doers of the Word because he knew that was where spiritual maturity came from.&nbsp; We must read our Bibles and meditate on what it says, but not stop there.&nbsp; Accepting the Word of God means that we do what it says.&nbsp; Sometimes the best thing we can do is put down the Bible and actually start living what it says.&nbsp; This section ends with James admonishing the people to look after orphans and widows and to keep ourselves from the toxic ways of the world.&nbsp; We have spoken of this many times at church.&nbsp; As Christ followers, we are called to align ourselves with people who can’t take care of themselves.&nbsp; We are called to take care of others out of love for Christ.&nbsp; We are also called to be holy; a light in a dark world.&nbsp; We are called to bring the love of Christ everywhere we go.&nbsp; I remind my kids this when we go into situations where I know we will be surrounded by non-believers.&nbsp; We are called to love each other.&nbsp; John 13:35 says that the world will know we are His disciples by our love for one another.&nbsp; How do we love the people whom God has placed in our sphere of influence?&nbsp; Is it unconditional, reflecting the love of Christ?</p>
+							<p>If we want to grow in spiritual maturity, all we need to do is look back over James 1:&nbsp; Don’t blame God when things get tough.&nbsp; Take responsibility for your sin, thoughts and desires.&nbsp; Get rid of anger for that’s not how God works.&nbsp; Read your Bible and accept what the Word says.&nbsp; Obey God’s Word.&nbsp; Learn the ways of Jesus and practice them.&nbsp; Talk less and watch what you say.&nbsp; Take care of the needs of others.&nbsp; This doesn’t feel easy at times, but Jesus said His yoke is easy and His burden is light.&nbsp; We were created to live this way, but He doesn’t leave us alone to do it.&nbsp; The Holy Spirit is profound in how He grows us.&nbsp; We are being developed slowly over time.&nbsp; He doesn’t expect us to change all at once and He doesn’t ask us to do it alone.&nbsp; God wants us to work with Him, leaning on His strength.</p>
+							<p>Just a little while ago I was talking to a friend about spiritual development.&nbsp; At times we don’t feel like there is growth or change happening in our lives.&nbsp; But as I was looking back to several years ago, I can see the trials that God placed in my life and how those led me to a deeper relationship with the Lord.&nbsp; Now with my own kids, I can see how God has placed certain people or circumstances in their young lives to shape and mold them into Christ’s image.&nbsp; God sees the thoughts and sins in each of us and knows what we need to slowly strip those things away.&nbsp; He desires our holiness and we can trust in His goodness.&nbsp; Ultimately, my goal is to be more and more like Jesus.&nbsp; That process will be painful at times as the sin is being stripped away, but the reward will be great!</p>
+							<p>Peace,</p>
+							<p>Janelle S.</p>
+						  </div>
+						</div>
+					  </div>
+					  <div class="accordion-group">
+						<div class="accordion-heading">
+							<p class="muted pull-right">OCT 21</p>
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+								FINDING JOY WITHIN THE STRUGGLE
+							</a>
+						</div>
+						<div id="collapseTwo" class="accordion-body collapse">
+						  <div class="accordion-inner">
+							<p>This week, Jim kicked-off a new series in the book of James. The series is titled, “James: Faith in motion.” Jim started off with this statement: Life is hard. He reminded us that we are called by Paul to be weeping with those who weep. Yet, when life is hard for us or for those around us, it can be difficult to remain faithful. We can find ourselves hiding from the pain or sinking into despair, in both scenarios, we may feel distant from God.</p>
+							<p>Jim then told a story of a married couple who recently lost their 12-year-old. Jim asked them, “Where is God in this for you?” The wife replied, “I feel there’s a target on my back.” The husband admitted, “I just feel numb.” When life gets tough and our hearts are aching… Where is God in that? Is our faith practical and real in those times?</p>
+							<p>The book of James is a short and practical book that addresses our times of struggle. We are called to be set-apart from non-believers in such a way that we are a magnet that draws others to Jesus. Surprisingly, we can achieve that most during our suffering. The world sees many Christians as hypocritical because our faith flounders when we hit rough waters. James addresses this issue, but before we get to that, Jim wanted to give us a general understanding of the entire book.<span id="more-1962"></span></p>
+							<p>First, Jim asked us to picture a funnel. He said that initially, he would give us the big picture of the book and then he would funnel the rest of the sermon down to a single phrase within the book.&nbsp; Here is some background, or the big picture, on the book of James…</p>
+							<p>Historians think that James was probably written before Acts 15. If you can recall. In Acts 15, James was a major advocate for the church during that season of hardship. There is some debate over which “James” it was that wrote the book of James. Jim believes that it was James the brother of Jesus because he was such a passionate spokesperson at this time. James had a heart for the struggling Christians of this time so it makes sense that he would want to write a letter to encourage them. That letter became the book of James.</p>
+							<p>The Christians of that time were struggling because they had been scattered. Everything had been so exciting and the church was spreading like wildfire but when Stephen was martyred, chaos broke-out. Christians became persecuted in a scary way. The church became piecemeal. Questions began to arise… “What now? How do we live? Everything we held dear has been ripped from us!” The book of James is a response to these cries. He wanted to reveal where God was in the midst of their suffering.</p>
+							<p>According to Jim, the theme of this book could be: Faith lived practically. Again, life is hard. James desired for Christians see how their lives were to be lived in the good times and the bad. So how does our faith get practiced in real life?</p>
+							<p>This is where Jim stopped and asked for one simple request: Read the book of James once a week through this series. “It’s a short book!” He exclaimed as the congregation laughed. Truly, it is only five chapters. We agreed to read it and I hope you do too. His hope is that by reading it, the words will become ingrained in us and we will come to understand the heart behind James’ writing.</p>
+							<p>So, back to James and how we are to live. James wants us to live a good life. A key theme verse in the book is Chapter 3, verse 13, which says: Who is wise and understanding among you? Let them show it by their good life, by deeds done in the humility that comes from wisdom. (NIV) The practical application of God’s truth to our lives is equated with wisdom.</p>
+							<p>“The good life is not the American Dream,” Jim said bluntly, “It’s a life of good deeds that flow out of the humility of wisdom.” In James 1:5-8, he states: &nbsp;If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you. But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind. That person should not expect to receive anything from the Lord. Such a person is double-minded and unstable in all they do. (NIV)</p>
+							<p>Jim clarifies that the kind of “doubter” that James is referring to is not the one who questions God during extreme circumstances, like the family he spoke of earlier. Rather, James is calling-out those Christians who follow God only when it’s convenient. If they’re happy and things are going well, it’s easy to remain faithful but as soon as things get rough, it can become harder to stay committed. When we start to question God’s goodness because we can’t find a parking space at the grocery store, we may need to consider our commitment.</p>
+							<p>All too often, we equate our blessings from God with our own value. Yet, Jim pointed out vs. 1:9-11 which says: Believers in humble circumstances ought to take pride in their high position.&nbsp;But the rich should take pride in their humiliation—since they will pass away like a wild flower.&nbsp;For the sun rises with scorching heat and withers the plant; its blossom falls and its beauty is destroyed. In the same way, the rich will fade away even while they go about their business. (NIV) Jim wanted us to see that “if you’re barely making it, you have a high position with God and if you have a lot, don’t get too caught up with it.”</p>
+							<p>Then Jim read verse 12 from chapter 1… Blessed is the one who perseveres under trial because, having stood the test, that person will receive the crown of life that the Lord has promised to those who love him. Then we went back to chapter 1, verse 2…Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds… Then Jim burst out with, “Consider it pure joy? Are you kidding me?!” It seems like such an unrealistic command!</p>
+							<p>Then Jim broke it down: 1. By saying “whenever you face trials,” James is making it pretty obvious that trials WILL happen to us. They are just a part of life. 2. James is telling us to “consider” our situation and then find joy from it. This implies that joy will not be our initial response but that we must take a step back from our situation and choose to find joy.</p>
+							<p>Ultimately, we are called to have a solid faith that is strengthened through our trust in God. The book of James makes it clear that we will not acquire such a faith without struggle. It seems that this is the very thing that makes us set-apart from the rest of the world. God can give us a peace through our suffering. It is a kind of peace that unbelievers will find confusing but enticing. Having a strong faith and doing good deeds despite our circumstances can give us a solid testimony to share with others. God wants to give us peace despite our hardship not only for our own sake, but for the sake of attracting others.</p>
+							<p>Peace &amp; Joy,</p>
+							<p>Jaclyn S.</p>
+						  </div>
+						</div>
+					  </div>
 					</div>
 				</div>
-				<div class="tab-pane" id="services"></div>
-				<div class="tab-pane" id="events"></div>          
+				<div class="tab-pane" id="events">
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<td>
+									<h4><strong>RHO</strong> 2nd birthday, FALL celebration<br>&amp; UGANDA WEEKEND</h4>
+									<div>
+										<p class="muted">After Service</p>
+										<p class="muted">November 3</p>
+									</div>
+									<div>
+										<ul>
+											<li>
+											Pastor Hibu is visiting!</li>
+											<li>
+											Buck A Burger-remember to bring a side or fall dessert to share</li>
+											<li>
+											Bounce house for kids</li>
+											<li>
+											Birthday cake and other goodies</li>
+											<li>
+											Games for the kids</li>
+										</ul>
+										<p>This is a great weekend to begin Christmas shopping. Uganda based ministries, 31 Bits, Crochet Kids, Remnant and more will be present selling their wares with 20% of the proceeds going to the <span class="il">RHO</span> Uganda trip. We will also be selling&nbsp; T-shirts designed by one of our own <span class="il">RHO</span> kids! When you purchase one for you the other will be given to a child in Uganda, made in Uganda by Remnant. We will also be doing child sponsorships for Pastor Hibu's village, Guru Guru.</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h4>MOTHER-BABY / OVERFLOW</h4>
+									<div>
+										<p class="muted">Beginning Sunday</p>
+										<p class="muted">November 3</p>
+									</div>
+									<p>Beginning this weekend we will have a room set aside in the foyer outside the Little Theater.</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h4>HART PARK MINISTRY</h4>
+									<div>
+										<p class="muted">12:00pm-2:00pm</p>
+										<p class="muted">November 3</p>
+									</div>
+									<p>This is a ministry that is focused on not only meeting the needs of the homeless but also developing ongoing relationships.</p>
+									<p>Chili lunches this week!</p>
+									<p>The Homeless Ministry serves the first Sunday of every month after service at Hart Park, Orange.</p>
+									<p class="muted">For more information contact Sara Steinle at sara@steinledesign.com.</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>          
 			</div>
 		</div>
+		
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		<script src="http://code.jquery.com/jquery.js"></script>
@@ -67,6 +504,98 @@
 				e.preventDefault();
 				$(this).tab('show');
 			});
+
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+			// device APIs are available
+			//
+			function onDeviceReady() {
+				//playAudio("http://dj543q8jb3awo.cloudfront.net/costamesa/files/2013/11/20131103_costamesa_message_9am.mp3");
+			}
+
+			// Audio player
+			//
+			var my_media = null;
+			var mediaTimer = null;
+
+			// Play audio
+			//
+			function playAudio(src) {
+				// Create Media object from src
+				my_media = new Media(src, onSuccess, onError);
+
+				// Play audio
+				my_media.play();
+
+				// Update my_media position every second
+				if (mediaTimer == null) {
+					mediaTimer = setInterval(function() {
+						// get my_media position
+						my_media.getCurrentPosition(
+							// success callback
+							function(position) {
+								if (position > -1) {
+									setAudioPosition((position) + " sec");
+								}
+							},
+							// error callback
+							function(e) {
+								console.log("Error getting pos=" + e);
+								setAudioPosition("Error: " + e);
+							}
+						);
+					}, 1000);
+				}
+			}
+			
+			// Pause audio
+			//
+			function pauseAudio() {
+				if (my_media) {
+					my_media.pause();
+				}
+			}
+
+			// Stop audio
+			//
+			function stopAudio() {
+				if (my_media) {
+					my_media.stop();
+				}
+				clearInterval(mediaTimer);
+				mediaTimer = null;
+			}
+
+			// onSuccess Callback
+			//
+			function onSuccess() {
+				console.log("playAudio():Audio Success");
+			}
+
+			// onError Callback
+			//
+			function onError(error) {
+				alert('code: '    + error.code    + '\n' +
+					  'message: ' + error.message + '\n');
+			}
+
+			// Set audio position
+			//
+			function setAudioPosition(position) {
+				document.getElementById('audio_position').innerHTML = position;
+			}
+			
+			$('#playAnnounceArticle').click(function (e) {
+				$("#audio_alert").fadeIn();
+				playAudio("http://dj543q8jb3awo.cloudfront.net/costamesa/files/2013/11/20131103_costamesa_message_9am.mp3");
+			});
+			
+			$('#audio_alert').hide();
+			
+			$('#audio_stop').click(function (e) {
+				stopAudio();
+			});
+			
         </script>
     </body>
 </html>
